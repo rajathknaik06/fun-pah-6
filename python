@@ -1,0 +1,27 @@
+""" Imagine you are working on a project that requires calculating the last digit of a Fibonacci number at a specific position. Fibonacci numbers are a sequence of numbers where each number is the sum of the two preceding ones, typically starting with 0 and 1.
+
+
+
+Your task is to create a program that efficiently calculates the last digit of the Fibonacci number at the nth position.
+
+
+
+Function Signature: fiboLastDigit(n)
+
+Input format :
+The input consists of a single non-negative integer n, representing the position.
+
+Output format :
+The output prints the last digit of the Fibonacci number at the nth position."""
+
+def fiboLastDigit(n):
+    if n <= 1:
+        print(n)
+    else:
+        a, b = 0, 1
+        for _ in range(2, n + 1):
+            a, b = b, (a + b) % 10
+        print(b)
+
+n = int(input())
+fiboLastDigit(n)
